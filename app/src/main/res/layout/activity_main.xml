@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <TextView
+        android:id="@+id/etTitulo"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_height="wrap_content"
+        android:text="Clínica dental"
+        android:background="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" 
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/lyContenido"
+        android:layout_marginHorizontal="15dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etTitulo">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="30dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="ID paciente:"
+                    android:layout_weight="1"
+                    />
+                <EditText
+                    android:id="@+id/etIdPaciente"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="Ej 1"
+                    android:layout_weight="1"
+
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="ID Doctor:"
+                    android:layout_weight="1"
+
+                    />
+
+                <EditText
+                    android:id="@+id/etIdDoctor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Ej 1"
+                    android:layout_weight="1"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de la cita(YYYY-MM-DD):"
+                    />
+                <EditText
+                    android:id="@+id/etFechaCita"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="2026-01-01"
+                    android:inputType="text"
+
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Motivo:"
+                    />
+                <EditText
+                    android:id="@+id/etMotivo"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:hint="Tengo una caries"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="ID cita:"
+                    />
+                <EditText
+                    android:id="@+id/etIdCita"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:hint="4658"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:onClick="crearCita"
+                    android:id="@+id/buCrearCita"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Crear cita"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10px"
+                    android:backgroundTint="#00BCD4"
+                    />
+                <Button
+                    android:onClick="buscarCita"
+                    android:id="@+id/buBuscarCita"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Buscar cita"
+                    android:layout_weight="1"
+                    android:backgroundTint="#00BCD4"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+                <Button
+                    android:onClick="listarTodas"
+                    android:id="@+id/buListarTodas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Listar todas las citas"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10px"
+                    android:backgroundTint="#00BCD4"
+                    />
+                <Button
+                    android:onClick="eliminarCita"
+                    android:id="@+id/buEliminarCita"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Eliminar cita"
+                    android:layout_weight="1"
+                    android:backgroundTint="#00BCD4"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <ListView
+            android:id="@+id/lvCitas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

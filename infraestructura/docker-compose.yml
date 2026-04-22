@@ -1,0 +1,35 @@
+version: "3"
+services:
+  servidorweb:
+    image: tomcat:9.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./web:/usr/local/tomcat/webapps
+    depends_on:
+      - "bbdd"
+
+  bbdd:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: dentista
+      MYSQL_ROOT_PASSWORD: Koala32locobuby
+      MYSQL_USER: dentista
+      MYSQL_PASSWORD: 1234
+    volumes:
+      - ./.db_data:/var/lib/mysql
+      - ./.db_backup:/docker-entrypoint-initdb.d
+    ports:
+      - "3307:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2
+    environment:
+      PMA_HOST: "bbdd"
+      PMA_USER: "root"
+      PMA_PASSWORD: "Koala32locobuby"
+    depends_on:
+      - "bbdd"
+    ports:
+      - "8081:80"
