@@ -8,7 +8,7 @@ Sistema sencillo de gestión de turnos dentales compuesto por una app **Android*
 - **Cancelación:** Eliminar turnos existentes.
 
 ## 🛠️ Tecnologías
-- **App:** Android Studio + Volley/Retrofit para las peticiones.
+- **App:** Android Studio + HTTPok para las peticiones.
 - **Servidor:** Java Servlets ejecutándose en **Apache Tomcat**.
 - **Datos:** Intercambio de información en formato **JSON**.
 
