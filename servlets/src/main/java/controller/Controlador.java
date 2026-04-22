@@ -61,14 +61,14 @@ public class Controlador implements DataAccess{
 
         try {
             bbdd.insertarCita(jsonCita);
-
+            return "Inserción realizada OK!";
         } catch (SQLException se) {
             String result =  "Insert: "  + " - " + se.getMessage();
             return result;
         } catch (ClassNotFoundException c) {
             return "Insert: "  + " - " + c.getMessage();
         }
-        return "Inserción realizada OK!";
+
     }
 
     public String delete(int idCita){
@@ -76,12 +76,13 @@ public class Controlador implements DataAccess{
 
         try {
             bbdd.eliminarCita(idCita);
+            return "Eliminarión realizada OK!";
         } catch (SQLException se) {
             String result =  "Delete: "  + " - " + se.getMessage();
             return result;
         } catch (ClassNotFoundException c) {
             return "Delete: "  + " - " + c.getMessage();
         }
-        return "Eliminarión realizada OK!";
+
     }
 }

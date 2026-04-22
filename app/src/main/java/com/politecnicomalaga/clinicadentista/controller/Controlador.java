@@ -80,7 +80,11 @@ public class Controlador {
             citas = (new Gson().fromJson(jsonData, tipoListaCitas));
             this.miPantalla.reaccionar("");
         } else {
-            this.miPantalla.reaccionar("Error de acceso a Backend " + jsonData);
+            if (!jsonData.isEmpty()){
+                this.miPantalla.reaccionar(""+jsonData);
+            } else {
+                this.miPantalla.reaccionar("Error de acceso a Backend " + jsonData);
+            }
         }
 
     }

@@ -37,6 +37,6 @@ public class InsertarCitaServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
 
-        out.println("{"+(new Controlador()).insert(miJsonMap)+"}");
+        out.println((new Controlador()).insert(miJsonMap));
     }
 }
